@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bandicoot-prod
+  labels:
+    ver: "2"
+    app: bandicoot
+    env: prod 
+spec:
+  selector:
+    matchLabels:
+      ver: "2"
+      app: bandicoot
+      env: prod     
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        ver: "2"
+        app: bandicoot
+        env: prod     
+    spec:
+      containers:
+      - name: kuard
+        image: gcr.io/kuar-demo/kuard-amd64:2

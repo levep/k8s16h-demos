@@ -1,4 +1,4 @@
-    kubectl create -f kuard-pod.yaml
+    kubectl create -f kuard-pod-full.yaml
 
     kubectl port-forward  --address 0.0.0.0 kuard  8080:8080
 
@@ -10,9 +10,7 @@
 
     kubectl cp $HOME/config.txt <pod-name>:/config.txt
 
-==Pod with health check==
-
-kubectl create -f kuard-pod-health.yaml
+==Pod health check==
 
     # Details of the restart can be found with kubectl describe kuard.
 
@@ -70,11 +68,9 @@ kubectl create -f kuard-pod-health.yaml
 
 == Labels ==
 
-kubectl run alpaca-prod --image=gcr.io/kuar-demo/kuard-amd64:1 --replicas=2 --labels="ver=1,app=alpaca,env=prod"
-kubectl run alpaca-test --image=gcr.io/kuar-demo/kuard-amd64:2 --replicas=1 --labels="ver=2,app=alpaca,env=test"
+$ cd lables
+$ kubectl create -f *
 
-kubectl run bandicoot-prod --image=gcr.io/kuar-demo/kuard-amd64:2 --replicas=2 --labels="ver=2,app=bandicoot,env=prod"
-kubectl run bandicoot-staging --image=gcr.io/kuar-demo/kuard-amd64:2 --replicas=1 --labels="ver=2,app=bandicoot,env=staging"
 
 kubectl get deployments --show-labels
 kubectl label deployments alpaca-test "canary=true"

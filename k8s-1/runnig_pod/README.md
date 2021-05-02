@@ -69,7 +69,7 @@
 == Labels ==
 
 $ cd lables
-$ kubectl create -f *
+$ kubectl create -f .
 
 
 kubectl get deployments --show-labels

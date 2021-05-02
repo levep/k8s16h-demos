@@ -1,4 +1,4 @@
-kubectl cereate -f deployment-alpaca-prod.yaml
+kubectl create -f deployment-alpaca-prod.yaml
 kubectl expose deployment alpaca-prod
 
 

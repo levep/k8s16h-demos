@@ -1,3 +1,5 @@
+kubectl create -f first-deployment.yaml
+
 kubectl  get deployments kuard \
 -o jsonpath --template {.spec.selector.matchLabels}
 

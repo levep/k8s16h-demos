@@ -11,15 +11,6 @@ kubectl  scale replicasets kuard-1128242161 --replicas=1 (Deployment managed Rep
 
 kubectl  get replicasets --selector=run=kuard
 
-----
-kubectl  get deployments kuard --export -o yaml >  first-deployment.yaml
-
-kubectl  replace -f  first-deployment.yaml --save-config
-You also need to run kubectl replace --save-config. This adds an annotation so
-that, when applying changes in the future, kubectl will know what the last applied
-configuration was for smarter merging of configs. If you always use kubectl apply,
-this step is only required after the first time you create a deployment using kubectl
-create -f
 ---
 kubectl  describe deployments kuard
 

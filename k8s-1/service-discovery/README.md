@@ -19,4 +19,8 @@ in browser <>:<port of NodePort service>
 kubectl edit service alpaca-prod
 
 ""Change the spec.type field to LoadBalancer.
+====
+minikube tunnel
+kubectl port-forward svc/alpaca-prod 80:80 (for service ClusterIP)
+
 

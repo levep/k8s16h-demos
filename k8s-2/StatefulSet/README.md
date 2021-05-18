@@ -1,7 +1,7 @@
-mk apply -f web.yaml
- mk get service nginx
- mk get statefulset
- mk get pod
+kubectl apply -f web.yaml
+ kubectl get service nginx
+ kubectl get statefulset
+ kubectl get pod
 
 For a StatefulSet with N replicas, when Pods are being deployed, they are created sequentially, in order from {0..N-1}. Examine the output of the kubectl get command in the first terminal. Eventually, the output will look like the example below.
 
@@ -37,7 +37,7 @@ $ kubectl expose deployment nginx --name nginxclusterip --port=80  --target-port
 ```
 To test our case we need to run DNS queries and curl command. arunvelsriram/utils contains all the tool that we need.
 ```
-$ kubectl run --generator=run-pod/v1 --rm utils -it --image arunvelsriram/utils bash
+$ kubectl run --rm utils -it --image arunvelsriram/utils bash
 
 $ host nginxheadless
 ```

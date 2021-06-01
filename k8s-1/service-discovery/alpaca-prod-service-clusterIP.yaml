@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: alpaca-prod
+  name: alpaca-prod-clusterip
 spec:
   selector:
     app: alpaca

@@ -21,6 +21,7 @@ kubectl edit service alpaca-prod
 ""Change the spec.type field to LoadBalancer.
 ====
 minikube tunnel
+minikube service <Service Name>
 kubectl port-forward svc/alpaca-prod 80:80 (for service ClusterIP)
 
 

@@ -4,7 +4,7 @@
 
     kubectl exec kuard date
 
-    kubectl exec -it kuard ash
+    kubectl exec -it kuard -- ash
 
     kubectl cp <pod-name>:/captures/capture3.txt ./capture3.txt
 
